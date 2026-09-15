@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#181a1c">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="My weekly class routine: course times, faculty, and rooms.">
+  <title>My class routine</title>
+
+  <!-- EDIT YOUR ROUTINE HERE.
+       Change the entries below, save this file, and redeploy it.
+       day: 0 = Sunday, 1 = Monday, ... 6 = Saturday.
+       start/end use 24-hour time. An optional notes field appears in class details.
+       The public page only displays this data; there is no visitor editing or browser override.
+  -->
+  <script id="routine-data">
+    const SCHEDULE = [
+      {id:'c1',day:1,start:'12:30',end:'14:00',code:'BA-1209',type:'BA',faculty:'Afrina Yasmin',room:'Room 203'},
+      {id:'c2',day:1,start:'14:00',end:'15:30',code:'GED-1205',type:'GED',faculty:'Chandan Biswas',room:'Lab'},
+      {id:'c3',day:1,start:'15:30',end:'17:00',code:'BA-1203',type:'BA',faculty:'Mehedi Hasan',room:'Room 304'},
+      {id:'c4',day:3,start:'09:30',end:'11:00',code:'GED-1205',type:'GED',faculty:'Chandan Biswas',room:'Lab'},
+      {id:'c5',day:3,start:'11:00',end:'12:30',code:'BA-1201',type:'BA',faculty:'Sohel Rana',room:'Room 305'},
+      {id:'c6',day:4,start:'11:00',end:'12:00',code:'BA-1201',type:'BA',faculty:'Sohel Rana',room:'Room 305'},
+      {id:'c7',day:4,start:'12:30',end:'14:00',code:'BA-1209',type:'BA',faculty:'Afrina Yasmin',room:'Room 305'},
+      {id:'c8',day:6,start:'14:30',end:'15:30',code:'BA-1203',type:'BA',faculty:'Mehedi Hasan',room:'Room 502'},
+      {id:'c9',day:6,start:'15:30',end:'17:00',code:'GED-1207',type:'GED',faculty:'Suriya Khatun',room:'Room 502'},
+      {id:'c10',day:6,start:'17:00',end:'18:30',code:'GED-1207',type:'GED',faculty:'Suriya Khatun',room:'Room 502'}
+    ];
+  </script>
+  <style>
+:root{color-scheme:dark;--bg:#181a1c;--panel:#1d2022;--ink:#e3e5e4;--muted:#969c9d;--line:#34383a;--accent:#cf9874;--soft:#292c2e;--mono:Consolas,'Liberation Mono',monospace;--sans:'Helvetica Neue',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--sans);-webkit-font-smoothing:antialiased}button,input,select{font:inherit;color:inherit}button{border:0;cursor:pointer;background:none}a{color:inherit;text-decoration:none}h1,h2,h3,p{margin:0}button:hover{background:var(--soft)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button,input,select,a{-webkit-tap-highlight-color:transparent}::selection{background:#705846;color:#fff}svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.svg-defs{position:absolute;width:0;height:0;overflow:hidden}.hidden{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:fixed;top:-70px;left:15px;z-index:40;padding:10px 16px;background:var(--panel)}.skip:focus{top:12px}.site{max-width:1240px;margin:auto;padding:0 40px}.masthead{height:82px;display:flex;align-items:center;gap:48px;border-bottom:1px solid var(--line)}.brand{font-size:17px;letter-spacing:-.5px;font-weight:500;white-space:nowrap}.brand span{color:var(--accent);margin-left:8px;font-weight:400}.masthead nav{display:flex;align-self:stretch;gap:25px}.nav-link{border-bottom:2px solid transparent;padding:2px 0 0;font-size:12px;color:var(--muted)}.nav-link:hover{background:none;color:var(--ink)}.nav-link.active{color:var(--ink);border-color:var(--accent)}.header-date{margin-left:auto;font:10px var(--mono);color:var(--muted)}main{padding-top:38px}.page-heading{display:flex;align-items:center;justify-content:space-between;gap:25px}.eyebrow{font:9px var(--mono);letter-spacing:1.2px;color:var(--muted);margin-bottom:10px}h1{font-size:43px;line-height:1.2;letter-spacing:-1.8px;font-weight:500}.subtitle{font-size:12px;line-height:1.7;color:var(--muted);margin-top:9px}.btn{border:1px solid var(--line);border-radius:3px;padding:9px 13px;min-height:37px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:11px;font-weight:500;white-space:nowrap}.btn svg{width:14px;height:14px}.btn:hover{border-color:#727979}.btn-primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}.btn-primary:hover{background:#c6cbc8}.export-btn{margin-top:15px}.overview{display:flex;align-items:center;gap:20px;justify-content:space-between;margin-top:28px;padding-bottom:26px;border-bottom:1px solid var(--line)}.stats{display:flex;align-items:center;gap:22px}.stat{display:flex;align-items:baseline;gap:6px;padding-right:22px;border-right:1px solid var(--line)}.stat:last-child{padding-right:0;border:0}.stat strong{font-size:21px;font-weight:400;font-variant-numeric:tabular-nums;line-height:1}.stat span{font-size:10px;color:var(--muted)}.today-summary{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px;padding:5px 0}.today-summary:hover{background:none;color:var(--ink)}.today-summary:before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent)}.today-summary svg{width:12px;height:12px}
+.next-class{display:flex;align-items:center;gap:26px;padding:20px 0;border-bottom:1px solid var(--line);margin-bottom:28px}.next-heading{min-width:77px;display:flex;flex-direction:column;gap:5px}.next-label{font:9px var(--mono);letter-spacing:1px;color:var(--accent)}.next-status{font:9px/1.5 var(--mono);color:var(--muted)}.next-course{display:flex;align-items:baseline;gap:14px;min-width:0}.next-course strong{font-size:20px;line-height:1.2;letter-spacing:-.4px;font-weight:500;white-space:nowrap}.next-course span{font-size:12px;color:var(--muted)}.next-info{display:flex;align-items:center;gap:18px;margin-left:auto}.next-info>span{display:flex;gap:6px;align-items:center;font-size:11px;color:var(--muted);white-space:nowrap}.next-info svg{width:12px;height:12px}.next-link{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--ink);padding:7px 0;white-space:nowrap}.next-link svg{width:13px;height:13px}.next-link:hover{background:none;color:var(--accent)}.next-none{font-size:12px;color:var(--muted)}
+.schedule-toolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:17px}.date-nav{display:flex;align-items:center;gap:4px}.date-nav h2{font-size:15px;font-weight:500;margin:0 4px;letter-spacing:-.2px}.icon-btn{min-width:32px;min-height:32px;display:inline-flex;align-items:center;justify-content:center;padding:6px;border-radius:3px}.icon-btn svg{width:15px;height:15px}.today-btn{border:1px solid var(--line);border-radius:3px;font-size:10px;padding:5px 10px;margin-left:10px;min-height:30px}.view-switch{display:flex;border:1px solid var(--line);border-radius:3px;padding:2px;flex-shrink:0}.view-switch button{padding:5px 12px;min-height:27px;font-size:11px;border-radius:2px;color:var(--muted)}.view-switch .active{background:var(--ink);color:var(--bg)}.filters{display:flex;align-items:center;gap:9px;margin-bottom:15px}.search{position:relative;flex:1;min-width:0}.search>svg{position:absolute;left:11px;top:11px;width:14px;height:14px;color:var(--muted)}.search input{width:100%;background:transparent;border:1px solid var(--line);border-radius:3px;height:36px;padding:0 32px;font-size:11px}.search input::placeholder{color:var(--muted)}.search kbd{position:absolute;right:10px;top:9px;font:10px var(--mono);border:1px solid var(--line);border-radius:2px;padding:0 4px;color:var(--muted)}#courseFilter{height:36px;border:1px solid var(--line);border-radius:3px;background:var(--bg);padding:0 9px;font-size:11px;color:var(--muted);max-width:145px}#scheduleContent{min-height:220px}.days{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-bottom:16px}.day{padding:11px 0;display:flex;flex-direction:column;align-items:center;gap:4px;border-right:1px solid var(--line)}.day:last-child{border:0}.day-name{font-size:10px;color:var(--muted)}.day-number{font-size:19px}.day.today{box-shadow:inset 0 -2px var(--accent)}.day.active{background:var(--soft)}.day.active .day-number{color:var(--accent)}.dot{height:3px;width:3px;border-radius:50%;background:var(--muted)}.dot.empty{visibility:hidden}
+.timetable-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--panel);scrollbar-width:thin;scrollbar-color:#555c5b transparent}.timetable{min-width:805px}.timetable-header,.timetable-body{display:grid;grid-template-columns:47px repeat(7,minmax(0,1fr))}.timetable-header{border-bottom:1px solid var(--line)}.timetable-corner{align-self:center;text-align:center;font:8px var(--mono);color:var(--muted)}.timetable-day{border-left:1px solid var(--line);padding:12px 0 11px;display:flex;flex-direction:column;align-items:center;gap:3px;position:relative}.timetable-day span{font:10px var(--mono);text-transform:uppercase;color:var(--muted)}.timetable-day strong{font-size:23px;line-height:1.3;font-weight:400;letter-spacing:-.6px}.timetable-day.today{background:#302923}.timetable-day.today span,.timetable-day.today strong{color:var(--accent)}.timetable-day.today:after{content:'';height:2px;background:var(--accent);position:absolute;bottom:-1px;left:0;right:0}.time-rail,.timetable-column{height:var(--board-height);position:relative}.time-rail{background:var(--bg)}.time-tick{position:absolute;right:7px;font:9px var(--mono);color:var(--muted);transform:translateY(-50%);white-space:nowrap}.time-tick:first-child{transform:translateY(5px)}.timetable-column{border-left:1px solid var(--line);background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--hour-height) - 1px),var(--line) calc(var(--hour-height) - 1px),var(--line) var(--hour-height))}.timetable-column.day-off{background-color:var(--bg)}.off-label{position:absolute;left:0;right:0;top:44%;font:9px var(--mono);color:#798080;transform:rotate(-90deg);text-align:center;white-space:nowrap}.timetable-event{position:absolute;left:4px;right:4px;width:calc(100% - 8px);padding:8px 7px;z-index:2;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;background:var(--course-bg);border:1px solid var(--course-border);border-top:2px solid var(--course-color);border-radius:3px;overflow:hidden}.timetable-event:hover{background:var(--course-bg);border-color:var(--course-color);z-index:3}.timetable-event:focus-visible{outline-offset:1px;z-index:4}.timetable-event>strong{font-size:12px;font-weight:500;line-height:1.3;white-space:nowrap}.event-time{font-size:9px;line-height:1.35;color:var(--muted);white-space:nowrap}.event-faculty{font-size:10px;line-height:1.3;color:var(--muted);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.timetable-event>small{font:10px/1.4 var(--mono);margin-top:auto;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.timetable-event.compact{gap:2px;padding-top:4px;padding-bottom:3px}.compact .event-faculty{display:none}.timetable-event.short{padding:1px 4px;gap:0}.short>span,.short>small{display:none}.now-line{position:absolute;left:0;right:0;height:1px;background:var(--accent);z-index:5;pointer-events:none}.now-line:before{content:'';height:5px;width:5px;background:var(--accent);border-radius:50%;position:absolute;left:-3px;top:-2px}.schedule-footer{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding-top:15px;font-size:10px;color:var(--muted)}.legend{display:flex;flex-wrap:wrap;gap:7px 14px}.legend>span{display:flex;gap:5px;align-items:center;font:9px/1.5 var(--mono);white-space:nowrap}.legend i{height:5px;width:5px;background:var(--course-color)}#resultCount{font:9px/1.6 var(--mono);white-space:nowrap}
+.day-group{margin-bottom:26px}.group-heading{display:flex;align-items:center;gap:9px;margin-bottom:10px}.group-heading h3{font-size:13px;font-weight:500}.group-date{font-size:11px;color:var(--muted)}.class-count{font:9px var(--mono);color:var(--muted);margin-left:auto}.today-label{font:9px var(--mono);color:var(--accent)}.class-row{display:grid;grid-template-columns:82px minmax(0,1fr);gap:12px;margin-bottom:8px}.time-column{padding-top:14px;text-align:right}.time-column strong{font:11px var(--mono);display:block}.time-column span{font:10px var(--mono);display:block;color:var(--muted);margin-top:6px}.class-card{display:flex;gap:18px;align-items:center;min-width:0;width:100%;text-align:left;padding:15px 18px;border:1px solid var(--course-border);border-left:3px solid var(--course-color);border-radius:3px;background:var(--course-bg)}.class-card:hover{background:var(--course-bg);border-color:var(--course-color)}.class-info{min-width:0;flex:1}.class-info strong{font-size:14px;font-weight:500}.class-info p{font-size:12px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}.class-type{font-size:10px;color:var(--muted);margin-left:10px}.class-room{display:flex;align-items:center;gap:5px;font:11px var(--mono);max-width:180px;overflow-wrap:anywhere}.class-room svg{width:12px;height:12px}.class-arrow{width:13px;height:13px;color:var(--muted)}.courses-heading{font-size:16px;font-weight:500}.course-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px;border-top:1px solid var(--line)}.directory-card{padding:25px 0;border-bottom:1px solid var(--line)}.directory-card:before{content:'';display:block;width:23px;height:2px;background:var(--course-color);margin-bottom:15px}.directory-card h3{font-size:24px;font-weight:400;letter-spacing:-.5px}.directory-card p{font-size:12px;color:var(--muted);margin:7px 0 10px}.directory-card small{display:block;font:11px var(--mono);color:var(--muted);margin-bottom:17px}.directory-card .btn{min-height:32px;font-size:10px}.empty-state{padding:65px 20px;text-align:center;border:1px solid var(--line);border-radius:3px}.empty-state>svg{color:var(--muted);margin-bottom:13px}.empty-state h3{font-size:18px;font-weight:400}.empty-state p{font-size:12px;color:var(--muted);margin-top:8px}.empty-state button{margin-top:20px}.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding:18px 0 24px;margin-top:32px;font-size:10px;color:var(--muted)}#timezoneLabel{font:9px/1.5 var(--mono)}
+dialog{width:min(460px,calc(100% - 30px));max-height:90vh;padding:0;background:var(--panel);color:var(--ink);border:1px solid #44494a;border-radius:5px;box-shadow:0 18px 70px #0005}dialog::backdrop{background:#080b0dc7}.dialog-header{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:24px 24px 15px}.dialog-header h2{font-size:25px;font-weight:400;letter-spacing:-.7px}.dialog-header .eyebrow{font-size:9px;margin-bottom:7px}.dialog-body{padding:0 24px 24px}.details-list{margin:0}.detail-row{display:grid;grid-template-columns:80px minmax(0,1fr);gap:15px;border-bottom:1px solid var(--line);padding:14px 0;font-size:13px}.detail-row dt{color:var(--muted);font-size:11px}.detail-row dd{margin:0;overflow-wrap:anywhere}.detail-notes{font-size:12px;white-space:pre-wrap;line-height:1.8;color:var(--ink);margin-top:20px;overflow-wrap:anywhere}.detail-notes strong{display:block;font:9px var(--mono);letter-spacing:1px;color:var(--muted);margin-bottom:8px}.form-intro{font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:18px}.field{display:flex;flex-direction:column;gap:7px;font-size:12px;margin-bottom:15px}.field input,.field select{height:39px;background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:7px 10px;font-size:13px;width:100%}.export-note{font-size:11px;color:var(--muted);line-height:1.8;border-block:1px solid var(--line);padding:12px 0;margin-top:18px}.dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.error{font-size:12px;color:#e6a084;line-height:1.6;margin-top:10px}.error:empty{display:none}.toast{position:fixed;bottom:23px;left:50%;transform:translate(-50%,15px);max-width:90vw;background:var(--ink);color:var(--bg);border-radius:3px;padding:12px 17px;font-size:12px;z-index:30;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s}.toast.show{opacity:1;transform:translate(-50%,0)}.noscript{padding:25px;text-align:center}
+@media(max-width:1100px){.site{padding:0 30px}.next-class{gap:20px}.next-course{flex-direction:column;gap:4px;align-items:flex-start}.next-course strong{font-size:18px}.next-info{gap:14px}.next-info>span{font-size:10px}.next-link{font-size:10px}.stats{gap:16px}.stat{padding-right:16px}.today-summary{font-size:10px}.overview{gap:14px}.next-heading{min-width:72px}}
+@media(max-width:800px){.site{padding:0 23px}.masthead{height:73px;gap:35px}.header-date{font-size:9px}main{padding-top:30px}h1{font-size:39px}.stats{gap:17px}.stat{padding-right:17px}.overview{flex-wrap:wrap;gap:17px;margin-top:24px;padding-bottom:22px}.today-summary{margin-left:auto}.next-class{flex-wrap:wrap;gap:14px 20px;padding:18px 0;margin-bottom:24px}.next-course{flex:1;flex-direction:row;gap:13px;align-items:baseline}.next-info{margin-left:92px;flex-wrap:wrap;gap:10px 18px;flex:1}.next-link{margin-left:auto}.next-info>span{font-size:11px}.next-course span{font-size:11px}.date-nav h2{font-size:14px}.today-btn{margin-left:7px}.view-switch button{padding:5px 11px}.schedule-toolbar{gap:10px}.class-row{grid-template-columns:71px minmax(0,1fr);gap:10px}.class-card{padding:14px}.class-type{font-size:9px}.class-info p{font-size:11px}.class-room{font-size:10px}.time-column strong{font-size:10px}.time-column span{font-size:9px}}
+/* Phone layout: keep class information readable without zooming. */
+.mobile-class-time,.timetable-hint{display:none}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media screen and (max-width:700px){
+  .site{padding:0 max(18px,env(safe-area-inset-right)) 0 max(18px,env(safe-area-inset-left))}
+  .masthead{height:68px;gap:18px}.brand{font-size:16px}.masthead nav{margin-left:auto;gap:18px}.nav-link{font-size:13px;min-width:48px}.header-date{display:none}
+  main{padding-top:25px}.page-heading{align-items:flex-start;gap:12px}.page-heading>div{min-width:0}h1{font-size:34px;letter-spacing:-1.3px}.eyebrow{font-size:10px;letter-spacing:1px}.subtitle{font-size:13px;max-width:290px;line-height:1.6}
+  .btn,.icon-btn,.today-btn{min-height:44px}.btn{font-size:13px}.icon-btn{min-width:44px}.icon-btn svg{width:18px;height:18px}
+  .export-btn{font-size:0;gap:0;min-width:44px;padding:12px;margin-top:22px}.export-btn svg{width:18px;height:18px}
+  .overview{gap:6px;margin-top:24px;padding-bottom:10px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;gap:0;align-items:stretch}.stat{padding:0 12px;flex-direction:column;align-items:flex-start;gap:7px}.stat:first-child{padding-left:0}.stat:last-child{padding-right:0}.stat strong{font-size:25px}.stat span{font-size:11px;line-height:1.4;white-space:normal}.today-summary{margin:3px 0 0;font-size:12px;min-height:44px}
+  .next-class{display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:14px 12px;padding:18px 0;margin-bottom:22px}.next-heading{min-width:0}.next-label{font-size:10px}.next-status{font-size:10px}.next-course{display:flex;flex-direction:column;align-items:flex-start;gap:4px}.next-course strong{font-size:21px}.next-course span{font-size:12px;overflow-wrap:anywhere}.next-info{grid-column:1/-1;grid-row:2;display:flex;flex-wrap:wrap;margin:0;gap:8px 16px}.next-info>span{font-size:12px}.next-info svg{width:14px;height:14px}.next-link{grid-column:3;grid-row:1;min-height:44px;min-width:44px;justify-content:flex-end;font-size:12px;padding:0}.next-link svg{width:16px;height:16px}
+  .schedule-toolbar{flex-wrap:wrap;gap:12px;margin-bottom:16px}.date-nav{display:grid;grid-template-columns:44px minmax(0,1fr) 44px auto;gap:0;width:100%}.date-nav h2{text-align:center;font-size:14px;margin:0;line-height:1.4;letter-spacing:-.3px}.date-nav .icon-btn{min-height:44px;min-width:44px;padding:10px}.date-nav .icon-btn svg{width:18px;height:18px}.today-btn{margin-left:8px;padding:8px 11px;font-size:12px}.view-switch{width:100%;margin:0;padding:3px;gap:3px}.view-switch button{flex:1;min-height:44px;font-size:13px;padding:9px}
+  .days{margin-bottom:16px}.day{padding:12px 0;gap:5px;min-height:74px}.day-name{font-size:11px}.day-number{font-size:21px}
+  .filters{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}.search input{height:46px;font-size:16px;padding:0 12px 0 36px}.search>svg{left:12px;top:15px;width:16px;height:16px}.search kbd{display:none}#courseFilter{height:46px;max-width:165px;font-size:16px;padding:0 8px}.search input::placeholder{font-size:14px}
+  .class-row{display:block;margin-bottom:10px}.time-column{display:none}.class-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px;padding:16px;border-radius:4px}.class-info{grid-column:1/-1}.class-info strong{font-size:17px}.class-info p{font-size:14px;margin-top:3px}.class-type{font-size:11px;margin-left:10px}.mobile-class-time{display:block;font:12px/1.5 var(--mono);margin-bottom:9px;color:var(--ink)}.class-room{font-size:12px;max-width:none}.class-room svg{width:14px;height:14px}.class-arrow{width:16px;height:16px;margin-left:auto}
+  .day-group{margin-bottom:27px}.group-heading{flex-wrap:wrap;gap:6px;margin-bottom:12px}.group-heading h3{font-size:15px}.group-date{font-size:12px}.class-count,.today-label{font-size:10px}.schedule-footer{flex-wrap:wrap;gap:12px}.legend{gap:8px 14px}.legend>span,#resultCount{font-size:10px}
+  .timetable-hint{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;color:var(--muted);margin-bottom:10px}.timetable-hint svg{width:16px;height:16px}.timetable-scroll{overscroll-behavior-x:contain}.timetable{min-width:1000px}.timetable-header,.timetable-body{grid-template-columns:48px repeat(7,minmax(0,1fr))}.time-rail,.timetable-corner{position:sticky;left:0;z-index:6;background:var(--bg);border-right:1px solid var(--line)}.timetable-corner{align-self:stretch;display:grid;place-items:center;font-size:9px}.time-tick{font-size:10px}.timetable-event>strong{font-size:14px}.event-time{font-size:10px}.event-faculty{font-size:11px}.timetable-event>small{font-size:11px}
+  .course-directory{grid-template-columns:1fr}.directory-card{padding:22px 0}.directory-card h3{font-size:26px}.directory-card p{font-size:14px}.directory-card small{font-size:12px}.directory-card .btn{min-height:44px;font-size:13px}.courses-heading{font-size:18px}.empty-state{padding:44px 16px}.empty-state p{font-size:14px}
+  .footer{flex-wrap:wrap;gap:7px;font-size:11px;margin-top:28px;padding:18px 0 max(24px,env(safe-area-inset-bottom))}#timezoneLabel{font-size:10px}
+  dialog{width:100%;max-width:100%;max-height:calc(100dvh - 18px - env(safe-area-inset-top));margin:auto 0 0;border-radius:14px 14px 0 0;border-bottom:0;overscroll-behavior:contain}dialog[open]{display:flex;flex-direction:column}.dialog-header{flex-shrink:0;align-items:center;padding:20px max(20px,env(safe-area-inset-right)) 16px max(20px,env(safe-area-inset-left))}.dialog-header h2{font-size:26px}.dialog-header .eyebrow{font-size:10px}.dialog-body{overflow-y:auto;padding:0 max(20px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}.detail-row{font-size:15px;grid-template-columns:75px minmax(0,1fr);gap:12px;padding:15px 0}.detail-row dt{font-size:13px}.detail-notes,.form-intro{font-size:14px}.field{font-size:14px}.field input,.field select{font-size:16px;min-width:0;min-height:46px}.export-note{font-size:12px}.dialog-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.dialog-actions .btn{white-space:normal;font-size:13px;min-height:46px;padding:10px}.toast{bottom:max(20px,env(safe-area-inset-bottom));font-size:14px}
+}
+@media screen and (max-width:480px){.filters{grid-template-columns:minmax(0,1fr) 140px}#courseFilter{max-width:none;width:100%}.class-type{display:none}}
+@media screen and (max-width:700px){.days.list-days{display:none}}
+@media screen and (max-width:360px){.site{padding-inline:max(14px,env(safe-area-inset-left)) max(14px,env(safe-area-inset-right))}.brand{font-size:14px}.masthead nav{gap:14px}.nav-link{font-size:12px}h1{font-size:29px}.stat{padding-inline:8px}.stat span{font-size:10px}.date-nav h2{font-size:12px}.today-btn{padding-inline:8px;margin-left:3px}.next-class{grid-template-columns:65px minmax(0,1fr) auto;gap:12px 8px}.next-course strong{font-size:19px}.next-link{font-size:11px}.next-info>span{font-size:11px}.day-name{font-size:10px}.group-heading h3{font-size:14px}.group-date{font-size:11px}}
+@media screen and (pointer:coarse) and (min-width:701px){.btn,.icon-btn,.today-btn,.view-switch button,.directory-card .btn{min-height:44px}.icon-btn{min-width:44px}.search input,#courseFilter{height:44px;font-size:16px}.search>svg{top:15px}.search kbd{display:none}.field input,.field select{font-size:16px;min-height:44px}}
+@media screen and (max-height:480px) and (max-width:1000px){dialog{max-height:calc(100dvh - 16px);overflow-y:auto}.dialog-header{padding-top:12px;padding-bottom:12px}.dialog-body{overflow-y:auto}}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{:root{color-scheme:light;--bg:#fff;--panel:#fff;--ink:#111;--muted:#555;--line:#ccc;--accent:#333}.site{max-width:none;padding:0}.masthead,.export-btn,.today-summary,.next-class,.view-switch,.filters,.date-nav button,.days,.footer,dialog,.toast{display:none!important}main{padding:0}h1{font-size:30px}.overview{padding:12px 0;margin:15px 0 20px}.timetable-scroll{overflow:visible}.timetable{min-width:0}.timetable-body,.day-group,.class-row{break-inside:avoid}.timetable-event,.class-card{background:#f2f2ee!important;border-color:#aaa!important;color:#111}.event-time,.event-faculty,.class-info p{color:#444}.timetable-event>strong{font-size:9px}.timetable-event>span,.timetable-event>small{font-size:8px}.schedule-area{margin-top:15px}.timetable-day.today{background:#eee}.timetable-column.day-off{background:#fafafa}.legend i{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+  </style>
+</head>
+<body>
+  <a class="skip" href="#scheduleArea">Skip to timetable</a>
+  <svg class="svg-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4m8-4v4M3 11h18"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  </defs></svg>
+
+  <div class="site">
+    <header class="masthead">
+      <a href="#" class="brand" id="homeLink">class routine<span>/</span></a>
+      <nav aria-label="Main navigation"><button class="nav-link active" data-page="schedule" aria-current="page">Schedule</button><button class="nav-link" data-page="courses">Courses</button></nav>
+      <span class="header-date" id="headerDate"></span>
+    </header>
+    <main>
+      <div class="page-heading">
+        <div><p class="eyebrow" id="eyebrow">WEEKLY SCHEDULE</p><h1 id="pageTitle">My class routine</h1><p class="subtitle" id="pageSubtitle">Class times, faculty, and rooms. That’s it.</p></div>
+        <button class="btn export-btn" id="exportBtn" aria-label="Export calendar" title="Export calendar"><svg aria-hidden="true"><use href="#i-download"/></svg>Export calendar</button>
+      </div>
+      <div class="overview"><div class="stats" id="stats" aria-label="Weekly totals"></div><button class="today-summary" id="todaySummary"></button></div>
+      <section class="next-class" id="nextPanel" aria-label="Next class"></section>
+
+      <section class="schedule-area" id="scheduleArea" aria-label="Class schedule">
+        <div class="schedule-toolbar"><div class="date-nav" id="dateNav"><button class="icon-btn" id="prevWeek" aria-label="Previous week"><svg><use href="#i-left"/></svg></button><h2 id="weekLabel"></h2><button class="icon-btn" id="nextWeek" aria-label="Next week"><svg><use href="#i-right"/></svg></button><button class="today-btn" id="todayBtn">Today</button></div><h2 class="courses-heading hidden" id="coursesHeading">Courses</h2><div class="view-switch" id="viewSwitch" aria-label="Schedule view"><button data-view="timetable" aria-pressed="true" class="active">Week</button><button data-view="agenda" aria-pressed="false">List</button><button data-view="day" aria-pressed="false">Day</button></div></div>
+        <div class="days hidden" id="days" aria-label="Choose a day"></div>
+        <div class="filters"><div class="search"><svg aria-hidden="true"><use href="#i-search"/></svg><label class="sr-only" for="searchInput">Search course, faculty, or room</label><input type="search" id="searchInput" placeholder="Search classes" autocomplete="off"><kbd aria-hidden="true">/</kbd></div><label class="sr-only" for="courseFilter">Filter courses</label><select id="courseFilter"><option value="all">All courses</option><option value="BA">Business · BA</option><option value="GED">General · GED</option><option value="Other">Other courses</option></select></div>
+        <div id="scheduleContent" aria-live="polite"></div>
+        <div class="schedule-footer"><div class="legend" id="legend"></div><span id="resultCount"></span></div>
+      </section>
+    </main>
+    <footer class="footer"><span>My weekly class schedule.</span><span id="timezoneLabel"></span></footer>
+  </div>
+
+  <dialog id="detailsDialog" aria-labelledby="detailsTitle"><div class="dialog-header"><div><p class="eyebrow">CLASS DETAILS</p><h2 id="detailsTitle"></h2></div><button class="icon-btn" data-close="detailsDialog" aria-label="Close class details"><svg><use href="#i-close"/></svg></button></div><div class="dialog-body" id="detailsBody"></div></dialog>
+  <dialog id="exportDialog" aria-labelledby="exportTitle"><div class="dialog-header"><h2 id="exportTitle">Export calendar</h2><button class="icon-btn" data-close="exportDialog" aria-label="Close export options"><svg><use href="#i-close"/></svg></button></div><div class="dialog-body"><p class="form-intro">Download the full routine as an .ics file for your calendar app.</p><label class="field" for="exportStart">Start date<input type="date" id="exportStart" required></label><label class="field" for="exportWeeks">Repeat for<select id="exportWeeks"><option value="1">1 week</option><option value="4">4 weeks</option><option value="12" selected>12 weeks</option><option value="16">16 weeks</option></select></label><p class="export-note">Includes all classes, faculty, and rooms. Times follow your device’s local timezone.</p><p class="error" id="exportError" role="alert"></p><div class="dialog-actions"><button class="btn" id="printBtn">Print current view</button><button class="btn btn-primary" id="downloadBtn">Download .ics</button></div></div></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <noscript><p class="noscript">Enable JavaScript to view the class routine.</p></noscript>
+  <script>
+'use strict';
+
+// The published schedule is the only data source. Visitors can view and export it.
+const classes = SCHEDULE;
+const $ = id => document.getElementById(id);
+const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const WEEK = [1, 2, 3, 4, 5, 6, 0];
+const HOUR_HEIGHT = 62;
+let weekStart = startOfWeek(new Date());
+let selectedDay = new Date().getDay();
+let view = matchMedia('(max-width:700px)').matches ? 'agenda' : 'timetable';
+let page = 'schedule';
+let toastTimer;
+
+function startOfWeek(date) {
+  const d = new Date(date);
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() - ((d.getDay() + 6) % 7));
+  return d;
+}
+function dateForDay(day, start = weekStart) {
+  const d = new Date(start);
+  d.setDate(d.getDate() + ((day + 6) % 7));
+  return d;
+}
+function dateKey(date) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+}
+const sameDate = (a, b) => dateKey(a) === dateKey(b);
+const minutes = time => { const [h, m] = time.split(':').map(Number); return h * 60 + m; };
+const timeText = time => { const [h, m] = time.split(':').map(Number); return `${h % 12 || 12}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`; };
+const esc = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[char]));
+const icon = name => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
+const hours = list => Number((list.reduce((total, c) => total + minutes(c.end) - minutes(c.start), 0) / 60).toFixed(1));
+
+function colors(c) {
+  const palettes = {
+    'BA-1209': ['#28332e', '#415249', '#91ad99'],
+    'BA-1201': ['#293238', '#43535f', '#98afbf'],
+    'BA-1203': ['#363229', '#554b36', '#b8a67b'],
+    'GED-1205': ['#382e29', '#5a4539', '#c4997e'],
+    'GED-1207': ['#332d36', '#504153', '#b59cba']
+  };
+  const p = palettes[c.code] || palettes[c.type === 'GED' ? 'GED-1205' : 'BA-1209'];
+  return `--course-bg:${p[0]};--course-border:${p[1]};--course-color:${p[2]}`;
+}
+function renderStats() {
+  const stats = [[classes.length, 'Classes / week'], [new Set(classes.map(c => c.code)).size, 'Courses'], [hours(classes), 'Hours / week'], [7 - new Set(classes.map(c => c.day)).size, 'Days off']];
+  $('stats').innerHTML = stats.map(([value, label]) => `<div class="stat"><strong>${value}</strong><span>${label}</span></div>`).join('');
+  $('legend').innerHTML = [...new Set(classes.map(c => c.code))].map(code => `<span style="${colors(classes.find(c => c.code === code))}"><i></i>${esc(code)}</span>`).join('');
+}
+function filteredClasses() {
+  const query = $('searchInput').value.trim().toLowerCase(), type = $('courseFilter').value;
+  return classes.filter(c => (type === 'all' || c.type === type) && `${c.code} ${c.faculty} ${c.room}`.toLowerCase().includes(query))
+    .sort((a, b) => ((a.day + 6) % 7) - ((b.day + 6) % 7) || a.start.localeCompare(b.start));
+}
+function clearFilters() { $('searchInput').value = ''; $('courseFilter').value = 'all'; renderSchedule(); }
+function showEmpty() {
+  const filtered = $('searchInput').value.trim() || $('courseFilter').value !== 'all';
+  const title = filtered ? 'No matching classes' : 'No classes scheduled';
+  const description = filtered ? 'Try another course, faculty name, or room.' : view === 'day' ? `No classes on ${DAYS[selectedDay]}.` : 'There are no classes in this schedule.';
+  $('scheduleContent').innerHTML = `<div class="empty-state">${icon(filtered ? 'search' : 'calendar')}<h3>${title}</h3><p>${description}</p>${filtered ? '<button class="btn" id="clearFilters">Clear filters</button>' : '<button class="btn" id="seeWeek">See full week</button>'}</div>`;
+  if (filtered) $('clearFilters').onclick = clearFilters;
+  else $('seeWeek').onclick = () => { view = 'agenda'; renderSchedule(); };
+}
+function renderNavigation() {
+  const end = new Date(weekStart); end.setDate(end.getDate() + 6);
+  $('weekLabel').textContent = `${weekStart.toLocaleDateString('en-US', {month:'short', day:'numeric'})} – ${end.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'})}`;
+  $('days').classList.toggle('hidden', page === 'courses' || view === 'timetable');
+  $('days').classList.toggle('list-days', view === 'agenda');
+  $('days').innerHTML = WEEK.map(day => {
+    const d = dateForDay(day), today = sameDate(d, new Date()), active = view === 'day' && selectedDay === day;
+    return `<button class="day${today ? ' today' : ''}${active ? ' active' : ''}" data-day="${day}" aria-pressed="${active}" aria-label="${DAYS[day]}, ${d.toLocaleDateString('en-US', {month:'long', day:'numeric'})}${today ? ', today' : ''}"><span class="day-name">${DAYS[day].slice(0, 3)}</span><span class="day-number">${d.getDate()}</span><span class="dot${classes.some(c => c.day === day) ? '' : ' empty'}"></span></button>`;
+  }).join('');
+  document.querySelectorAll('[data-view]').forEach(b => { b.classList.toggle('active', b.dataset.view === view); b.setAttribute('aria-pressed', b.dataset.view === view); });
+}
+function classLabel(c) { return `${c.code}, ${DAYS[c.day]}, ${timeText(c.start)} to ${timeText(c.end)}, ${c.faculty}, ${c.room}`; }
+function classRow(c) {
+  return `<div class="class-row"><div class="time-column"><strong>${timeText(c.start)}</strong><span>${timeText(c.end)}</span></div><button class="class-card" style="${colors(c)}" data-class="${esc(c.id)}" aria-label="View ${esc(classLabel(c))}"><div class="class-info"><span class="mobile-class-time">${timeText(c.start)} – ${timeText(c.end)}</span><strong>${esc(c.code)}</strong><span class="class-type">${c.type === 'BA' ? 'Business' : c.type === 'GED' ? 'General education' : 'Other'}</span><p>${esc(c.faculty)}</p></div><span class="class-room">${icon('pin')}${esc(c.room)}</span><svg class="class-arrow" aria-hidden="true"><use href="#i-right"/></svg></button></div>`;
+}
+function renderSchedule() {
+  renderNavigation();
+  let list = filteredClasses();
+  if (page === 'courses') { renderCourses(list); return; }
+  if (view === 'day') list = list.filter(c => c.day === selectedDay);
+  $('resultCount').textContent = `${list.length} class${list.length === 1 ? '' : 'es'} ${view === 'day' ? 'this day' : 'this week'}`;
+  if (!list.length) { showEmpty(); return; }
+  if (view === 'timetable') { renderTimetable(list); return; }
+  $('scheduleContent').innerHTML = WEEK.map(day => {
+    const dayClasses = list.filter(c => c.day === day); if (!dayClasses.length) return '';
+    const d = dateForDay(day);
+    return `<section class="day-group"><div class="group-heading"><h3>${DAYS[day]} <span class="group-date">· ${d.toLocaleDateString('en-US', {month:'short', day:'numeric'})}</span></h3>${sameDate(d, new Date()) ? '<span class="today-label">TODAY</span>' : ''}<span class="class-count">${dayClasses.length} class${dayClasses.length === 1 ? '' : 'es'}</span></div>${dayClasses.map(classRow).join('')}</section>`;
+  }).join('');
+}
+function timeRange() {
+  return [Math.min(9, ...classes.map(c => Math.floor(minutes(c.start) / 60))), Math.max(18, ...classes.map(c => Math.ceil(minutes(c.end) / 60)))];
+}
+function renderTimetable(list) {
+  const [first, last] = timeRange(), now = new Date();
+  const header = `<div class="timetable-header"><span class="timetable-corner">TIME</span>${WEEK.map(day => { const d = dateForDay(day); return `<button class="timetable-day${sameDate(d, now) ? ' today' : ''}" data-day="${day}" aria-label="View ${DAYS[day]}, ${d.toLocaleDateString('en-US', {month:'long', day:'numeric'})}"><span>${DAYS[day].slice(0, 3)}</span><strong>${d.getDate()}</strong></button>`; }).join('')}</div>`;
+  const rail = `<div class="time-rail" aria-hidden="true">${Array.from({length:last - first}, (_, i) => `<span class="time-tick" style="top:${i * HOUR_HEIGHT}px">${(first + i) % 12 || 12} ${first + i >= 12 ? 'PM' : 'AM'}</span>`).join('')}</div>`;
+  const columns = WEEK.map(day => {
+    const off = !classes.some(c => c.day === day), today = sameDate(dateForDay(day), now);
+    return `<div class="timetable-column${off ? ' day-off' : ''}${today ? ' is-today' : ''}" aria-label="${DAYS[day]}">${off ? '<span class="off-label">No classes</span>' : ''}${list.filter(c => c.day === day).map(c => {
+      const length = minutes(c.end) - minutes(c.start), top = (minutes(c.start) - first * 60) / 60 * HOUR_HEIGHT;
+      return `<button class="timetable-event${length < 45 ? ' short' : length <= 60 ? ' compact' : ''}" data-class="${esc(c.id)}" style="${colors(c)};top:${top}px;height:${Math.max(8, length / 60 * HOUR_HEIGHT - 5)}px" aria-label="View ${esc(classLabel(c))}" title="${esc(classLabel(c))}"><strong>${esc(c.code)}</strong><span class="event-time">${timeText(c.start)}–${timeText(c.end)}</span><span class="event-faculty">${esc(c.faculty)}</span><small>${esc(c.room)}</small></button>`;
+    }).join('')}</div>`;
+  }).join('');
+  $('scheduleContent').innerHTML = `<p class="timetable-hint">Swipe to see the full week ${icon('arrow')}</p><div class="timetable-scroll" tabindex="0" role="region" aria-label="Weekly timetable. Scroll horizontally on smaller screens."><div class="timetable" style="--board-height:${(last - first) * HOUR_HEIGHT}px;--hour-height:${HOUR_HEIGHT}px">${header}<div class="timetable-body">${rail}${columns}</div></div></div>`;
+  updateTimeMarker();
+}
+function updateTimeMarker() {
+  const col = document.querySelector('.timetable-column.is-today'); if (!col) return;
+  const now = new Date(), current = now.getHours() * 60 + now.getMinutes(), [first, last] = timeRange();
+  let line = col.querySelector('.now-line');
+  if (current < first * 60 || current >= last * 60) { line?.remove(); return; }
+  if (!line) { line = document.createElement('div'); line.className = 'now-line'; line.setAttribute('aria-label', 'Current time'); col.append(line); }
+  line.style.top = `${(current - first * 60) / 60 * HOUR_HEIGHT}px`;
+}
+function renderCourses(list) {
+  const codes = [...new Set(list.map(c => c.code))];
+  $('resultCount').textContent = `${codes.length} course${codes.length === 1 ? '' : 's'}`;
+  if (!codes.length) { showEmpty(); return; }
+  $('scheduleContent').innerHTML = `<div class="course-directory">${codes.map(code => { const all = classes.filter(c => c.code === code); return `<article class="directory-card" style="${colors(all[0])}"><h3>${esc(code)}</h3><p>${esc([...new Set(all.map(c => c.faculty))].join(', '))}</p><small>${all.length} classes / week · ${hours(all)} hours</small><button class="btn" data-course="${esc(code)}">View classes ${icon('arrow')}</button></article>`; }).join('')}</div>`;
+}
+function switchPage(value) {
+  page = value === 'courses' ? 'courses' : 'schedule';
+  const courses = page === 'courses';
+  $('pageTitle').textContent = courses ? 'Courses' : 'My class routine';
+  $('pageSubtitle').textContent = courses ? 'Faculty and weekly hours for each course.' : 'Class times, faculty, and rooms. That’s it.';
+  document.querySelectorAll('[data-page]').forEach(b => { const active = b.dataset.page === page; b.classList.toggle('active', active); if (active) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); });
+  $('dateNav').classList.toggle('hidden', courses);
+  $('viewSwitch').classList.toggle('hidden', courses);
+  $('coursesHeading').classList.toggle('hidden', !courses);
+  $('nextPanel').classList.toggle('hidden', courses);
+  $('todaySummary').classList.toggle('hidden', courses);
+  renderSchedule();
+}
+function openDetails(id) {
+  const c = classes.find(c => c.id === id); if (!c) return;
+  $('detailsTitle').textContent = c.code;
+  const rows = [['Faculty', c.faculty], ['Day', `${DAYS[c.day]} · Every week`], ['Time', `${timeText(c.start)} – ${timeText(c.end)}`], ['Location', c.room], ['Duration', `${minutes(c.end) - minutes(c.start)} minutes`]];
+  $('detailsBody').innerHTML = `<dl class="details-list">${rows.map(([label, value]) => `<div class="detail-row"><dt>${label}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>${c.notes ? `<div class="detail-notes"><strong>NOTES</strong>${esc(c.notes)}</div>` : ''}`;
+  $('detailsDialog').showModal();
+}
+function nextClass() {
+  const now = new Date();
+  for (let offset = 0; offset <= 7; offset++) {
+    const date = new Date(now); date.setDate(date.getDate() + offset); date.setHours(0, 0, 0, 0);
+    const candidates = classes.filter(c => c.day === date.getDay()).map(c => { const start = new Date(date), end = new Date(date); start.setMinutes(minutes(c.start)); end.setMinutes(minutes(c.end)); return {c, start, end}; }).filter(item => item.end > now).sort((a, b) => a.start - b.start);
+    if (candidates.length) return {...candidates[0], live:candidates[0].start <= now};
+  }
+  return null;
+}
+function renderNext() {
+  const next = nextClass();
+  if (!next) { $('nextPanel').innerHTML = '<span class="next-label">NEXT CLASS</span><p class="next-none">No upcoming classes in this schedule.</p>'; return; }
+  const {c, start, live} = next, mins = Math.max(0, Math.ceil((start - new Date()) / 60000));
+  const when = live ? 'In progress' : mins < 60 ? `In ${mins} min` : mins < 1440 ? `In ${Math.floor(mins / 60)}h ${mins % 60}m` : start.toLocaleDateString('en-US', {weekday:'short'});
+  const restoreFocus = document.activeElement?.id === 'nextDetails';
+  $('nextPanel').innerHTML = `<div class="next-heading"><span class="next-label">${live ? 'NOW' : 'UP NEXT'}</span><span class="next-status">${when}</span></div><div class="next-course"><strong>${esc(c.code)}</strong><span>${esc(c.faculty)}</span></div><div class="next-info"><span class="next-date">${icon('calendar')}${start.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'})}</span><span>${icon('clock')}${timeText(c.start)}–${timeText(c.end)}</span><span>${icon('pin')}${esc(c.room)}</span></div><button class="next-link" id="nextDetails">Details ${icon('arrow')}</button>`;
+  $('nextDetails').onclick = () => openDetails(c.id);
+  if (restoreFocus) $('nextDetails').focus({preventScroll:true});
+}
+function updateDate() {
+  const now = new Date(), current = now.getHours() * 60 + now.getMinutes(), today = classes.filter(c => c.day === now.getDay()), remaining = today.filter(c => minutes(c.end) > current).length;
+  $('headerDate').textContent = now.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'});
+  $('eyebrow').textContent = `WEEKLY SCHEDULE / ${now.getFullYear()}`;
+  $('todaySummary').innerHTML = `${today.length ? remaining ? `${remaining} class${remaining === 1 ? '' : 'es'} left today` : 'Today’s classes are finished' : 'No classes today'} ${icon('arrow')}`;
+  $('todaySummary').setAttribute('aria-label', 'View today’s classes');
+  $('timezoneLabel').textContent = `${Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g, ' ')} · Local time`;
+}
+function goToday() { weekStart = startOfWeek(new Date()); selectedDay = new Date().getDay(); view = 'day'; switchPage('schedule'); }
+function notify(message) { $('toast').textContent = message; $('toast').classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').classList.remove('show'), 3500); }
+
+// Calendar files describe the published classes; exporting does not change the site.
+function icsEscape(value) { return String(value).replace(/\\/g, '\\\\').replace(/\r?\n/g, '\\n').replace(/;/g, '\\;').replace(/,/g, '\\,'); }
+function localStamp(date, time) { return dateKey(date).replace(/-/g, '') + 'T' + time.replace(':', '') + '00'; }
+function foldLine(line) {
+  const encoder = new TextEncoder(); let out = '', part = '', size = 0;
+  for (const char of line) { const length = encoder.encode(char).length; if (size + length > 75) { out += part + '\r\n'; part = ' '; size = 1; } part += char; size += length; }
+  return out + part;
+}
+function calendarText(from, weeks) {
+  const base = startOfWeek(from), stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Class Routine//Timetable//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'X-WR-CALNAME:Class routine'];
+  for (const c of classes) { const date = dateForDay(c.day, base); if (date < from) date.setDate(date.getDate() + 7); lines.push('BEGIN:VEVENT', `UID:${c.id}-${dateKey(date)}@routine.local`, `DTSTAMP:${stamp}`, `DTSTART:${localStamp(date, c.start)}`, `DTEND:${localStamp(date, c.end)}`, `RRULE:FREQ=WEEKLY;COUNT=${weeks}`, `SUMMARY:${icsEscape(c.code)}`, `DESCRIPTION:${icsEscape('Faculty: ' + c.faculty + (c.notes ? '\nNotes: ' + c.notes : ''))}`, `LOCATION:${icsEscape(c.room)}`, 'END:VEVENT'); }
+  lines.push('END:VCALENDAR'); return lines.map(foldLine).join('\r\n') + '\r\n';
+}
+$('exportBtn').onclick = () => { $('exportStart').value = dateKey(weekStart); $('exportError').textContent = ''; $('exportDialog').showModal(); };
+$('downloadBtn').onclick = () => {
+  const value = $('exportStart').value;
+  if (!value || !Number.isFinite(new Date(value + 'T00:00:00').getTime())) { $('exportError').textContent = 'Choose a valid start date.'; return; }
+  if (!classes.length) { $('exportError').textContent = 'There are no classes to export.'; return; }
+  const url = URL.createObjectURL(new Blob([calendarText(new Date(value + 'T00:00:00'), Number($('exportWeeks').value))], {type:'text/calendar;charset=utf-8'}));
+  const link = document.createElement('a'); link.href = url; link.download = `class-routine-${value}.ics`; document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000); $('exportDialog').close(); notify('Calendar downloaded.');
+};
+$('printBtn').onclick = () => { $('exportDialog').close(); window.print(); };
+document.querySelectorAll('[data-close]').forEach(b => b.onclick = () => $(b.dataset.close).close());
+document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('click', event => { if (event.target !== dialog) return; const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); }));
+document.querySelectorAll('[data-page]').forEach(b => b.onclick = () => switchPage(b.dataset.page));
+document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => { view = b.dataset.view; renderSchedule(); });
+function selectDay(event) { const button = event.target.closest('[data-day]'); if (button) { selectedDay = Number(button.dataset.day); view = 'day'; renderSchedule(); } }
+$('days').addEventListener('click', selectDay);
+$('scheduleContent').addEventListener('click', event => {
+  const details = event.target.closest('[data-class]'), course = event.target.closest('[data-course]');
+  if (details) openDetails(details.dataset.class);
+  else if (course) { $('searchInput').value = course.dataset.course; $('courseFilter').value = 'all'; view = 'agenda'; switchPage('schedule'); }
+  else selectDay(event);
+});
+$('searchInput').addEventListener('input', renderSchedule);
+$('courseFilter').addEventListener('change', renderSchedule);
+$('prevWeek').onclick = () => { weekStart.setDate(weekStart.getDate() - 7); renderSchedule(); };
+$('nextWeek').onclick = () => { weekStart.setDate(weekStart.getDate() + 7); renderSchedule(); };
+$('todayBtn').onclick = goToday;
+$('todaySummary').onclick = goToday;
+$('homeLink').onclick = event => { event.preventDefault(); $('searchInput').value = ''; $('courseFilter').value = 'all'; weekStart = startOfWeek(new Date()); view = matchMedia('(max-width:700px)').matches ? 'agenda' : 'timetable'; switchPage('schedule'); };
+document.addEventListener('keydown', event => { if (event.key === '/' && !['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName) && !document.querySelector('dialog[open]')) { event.preventDefault(); $('searchInput').focus(); } });
+
+renderStats(); updateDate(); renderNext(); renderSchedule();
+let lastDate = dateKey(new Date());
+setInterval(() => {
+  updateDate(); renderNext();
+  if (lastDate !== dateKey(new Date())) { lastDate = dateKey(new Date()); renderSchedule(); }
+  else if (page === 'schedule' && view === 'timetable') updateTimeMarker();
+}, 30000);
+
+  </script>
+</body>
+</html>
