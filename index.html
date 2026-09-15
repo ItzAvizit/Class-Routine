@@ -86,7 +86,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
   <div class="site">
     <header class="masthead">
-      <a href="#" class="brand" id="homeLink">class routine<span>/</span></a>
+      <a href="#" class="brand" id="homeLink">BBA-1.2<span>/</span></a>
       <nav aria-label="Main navigation"><button class="nav-link active" data-page="schedule" aria-current="page">Schedule</button><button class="nav-link" data-page="courses">Courses</button></nav>
       <span class="header-date" id="headerDate"></span>
     </header>
@@ -106,7 +106,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         <div class="schedule-footer"><div class="legend" id="legend"></div><span id="resultCount"></span></div>
       </section>
     </main>
-    <footer class="footer"><span>My weekly class schedule.</span><span id="timezoneLabel"></span></footer>
   </div>
 
   <dialog id="detailsDialog" aria-labelledby="detailsTitle"><div class="dialog-header"><div><p class="eyebrow">CLASS DETAILS</p><h2 id="detailsTitle"></h2></div><button class="icon-btn" data-close="detailsDialog" aria-label="Close class details"><svg><use href="#i-close"/></svg></button></div><div class="dialog-body" id="detailsBody"></div></dialog>
@@ -284,7 +283,6 @@ function updateDate() {
   $('eyebrow').textContent = `WEEKLY SCHEDULE / ${now.getFullYear()}`;
   $('todaySummary').innerHTML = `${today.length ? remaining ? `${remaining} class${remaining === 1 ? '' : 'es'} left today` : 'Today’s classes are finished' : 'No classes today'} ${icon('arrow')}`;
   $('todaySummary').setAttribute('aria-label', 'View today’s classes');
-  $('timezoneLabel').textContent = `${Intl.DateTimeFormat().resolvedOptions().timeZone.replace(/_/g, ' ')} · Local time`;
 }
 function goToday() { weekStart = startOfWeek(new Date()); selectedDay = new Date().getDay(); view = 'day'; switchPage('schedule'); }
 function notify(message) { $('toast').textContent = message; $('toast').classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').classList.remove('show'), 3500); }
